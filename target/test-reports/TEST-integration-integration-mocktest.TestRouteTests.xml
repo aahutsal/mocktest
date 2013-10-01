@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="captain" name="mocktest.TestRouteTests" tests="1" time="10.055" timestamp="2013-10-01T14:35:00">
+  <properties />
+  <testcase classname="mocktest.TestRouteTests" name="testSomething" time="10.054">
+    <failure message="java.lang.AssertionError: mock://bar Received message count. Expected: &lt;1&gt; but was: &lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: java.lang.AssertionError: mock://bar Received message count. Expected: &lt;1&gt; but was: &lt;0&gt;
+	at org.apache.camel.component.mock.MockEndpoint.fail(MockEndpoint.java:1318)
+	at org.apache.camel.component.mock.MockEndpoint.assertEquals(MockEndpoint.java:1300)
+	at org.apache.camel.component.mock.MockEndpoint.doAssertIsSatisfied(MockEndpoint.java:372)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:351)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:339)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:177)
+	at org.apache.camel.test.junit4.CamelTestSupport.assertMockEndpointsSatisfied(CamelTestSupport.java:653)
+	at mocktest.TestRouteTests.testSomething(TestRouteTests.groovy:32)
+</failure>
+  </testcase>
+  <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+  <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+</testsuite>

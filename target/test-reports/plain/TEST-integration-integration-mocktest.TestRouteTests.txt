@@ -1,0 +1,22 @@
+Testsuite: mocktest.TestRouteTests
+Tests run: 1, Failures: 1, Errors: 0, Time elapsed: 10,055 sec
+------------- Standard Output ---------------
+--Output from testSomething--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testSomething--
+------------- ---------------- ---------------
+
+Testcase: testSomething took 10,054 sec
+	FAILED
+java.lang.AssertionError: mock://bar Received message count. Expected: <1> but was: <0>
+junit.framework.AssertionFailedError: java.lang.AssertionError: mock://bar Received message count. Expected: <1> but was: <0>
+	at org.apache.camel.component.mock.MockEndpoint.fail(MockEndpoint.java:1318)
+	at org.apache.camel.component.mock.MockEndpoint.assertEquals(MockEndpoint.java:1300)
+	at org.apache.camel.component.mock.MockEndpoint.doAssertIsSatisfied(MockEndpoint.java:372)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:351)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:339)
+	at org.apache.camel.component.mock.MockEndpoint.assertIsSatisfied(MockEndpoint.java:177)
+	at org.apache.camel.test.junit4.CamelTestSupport.assertMockEndpointsSatisfied(CamelTestSupport.java:653)
+	at mocktest.TestRouteTests.testSomething(TestRouteTests.groovy:32)
+
