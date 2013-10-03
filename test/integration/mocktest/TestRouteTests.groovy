@@ -13,42 +13,24 @@ import org.apache.camel.processor.interceptor.Tracer
 import org.apache.camel.processor.interceptor.DefaultTraceFormatter
 import org.apache.camel.LoggingLevel
 
-import java.util.concurrent.TimeUnit
-
 class TestRouteTests extends CamelTestSupport {
   
   def CamelContext camelContext
   def ProducerTemplate producerTemplate
 
-  @Before
-  void setUp(){
-    camelContext.setTracing(true)
-
-    Tracer tracer = new Tracer()
-
-    DefaultTraceFormatter formatter = new DefaultTraceFormatter()
-    formatter.setShowOutBody(true);
-    formatter.setShowOutBodyType(true);
-    // set to use our formatter
-    tracer.setFormatter(formatter)
-
-    tracer.setLogLevel(LoggingLevel.WARN)
-
-    camelContext.addInterceptStrategy(tracer)
-
-    super.setUp()
+  protected CamelContext createCamelContext() throws Exception {
+    return camelContext;
   }
 
   @Test
   void testSomething() {
     def mockEndpoint
-    mockEndpoint = camelContext.getEndpoint('mock:bar') // this works
-    //mockEndpoint = getMockEndpoint('mock:bar') // this does not
+    //mockEndpoint = camelContext.getEndpoint('mock:bar') // this works
+    mockEndpoint = getMockEndpoint('mock:bar') // this now works also
 
     mockEndpoint.expectedMessageCount(1)
     producerTemplate.sendBody('direct:foo', "Hello World")
 
-    //assertMockEndpointsSatisfied(1, TimeUnit.SECONDS)
-    mockEndpoint.assertIsSatisfied()
+    assertMockEndpointsSatisfied()
   }
 }
