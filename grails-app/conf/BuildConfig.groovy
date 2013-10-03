@@ -42,7 +42,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
       compile('org.apache.camel:camel-core:2.12.1')
-      test('org.apache.camel:camel-test:2.12.1') { excludes "junit" }
+      test('org.apache.camel:camel-test:2.12.1')  { excludes "junit" }
 
         // runtime 'mysql:mysql-connector-java:5.1.22'
     }
@@ -52,7 +52,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.3"
         runtime ":resources:1.2"
 
-        runtime ":routing:1.2.7"
+        runtime ":routing:1.2.8"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
